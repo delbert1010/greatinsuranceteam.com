@@ -1,29 +1,461 @@
-#!/bin/bash
-# Script de publicación automática - Great Insurance Team
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta name="google-site-verification" content="LGC7mm0eBpx68MVXn2i6G-JzcvwCVEKsMFLgxzG7Ugk" /> 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-echo "🚀 Publicando cambios a greatinsuranceteam.com..."
-echo ""
+<!-- SEO PRIMARY -->
+<title>Great Insurance Team | Seguro de Salud, Vida, Auto y Medicare Advantage en Español — Florida</title>
+    <meta name="description" content="Seguro de salud Obamacare y ACA en español Florida. Agente de seguros para hispanos y familias latinas. Seguro de vida, auto, Medicare, dental, suplementario. Tax service y preparación de impuestos en español. Servicio 100% en español, sin costo de asesoría." />
+    <meta name="keywords" content="seguro de salud Obamacare Florida español, seguro médico ACA en español Florida, agente de seguros para hispanos Florida, tax service en español Florida, preparación de impuestos en español Florida, seguro de vida hispanos Florida, seguro de auto barato para latinos Florida, Medicare en español Florida, seguros suplementarios hispanos Florida, donde comprar seguro Obamacare en español Florida, cuánto cuesta seguro de salud ACA Florida, mejor agente de seguros hispano Florida, preparar taxes en español Florida, seguro de salud para familias latinas Florida, seguro ACA barato Florida, seguro dental hispanos Florida, seguro suplementario Medicare en español, great insurance team, seguros en español, Medicare Advantage español, Medicare Supplement Medigap español" />
+<meta name="author" content="Great Insurance Team">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://greatinsuranceteam.com/">
 
-# Ir al repositorio
-cd ~/greatinsuranceteam.com 2>/dev/null || {
-    echo "❌ Repositorio no encontrado en ~/greatinsuranceteam.com"
-    echo "Descarga index-SEO-OPTIMIZADO.html y súbelo manualmente a GitHub"
-    exit 1
+<!-- GEO -->
+<meta name="geo.region" content="US-FL">
+<meta name="geo.placename" content="Naples, Florida">
+
+<!-- OPEN GRAPH (Facebook, WhatsApp, LinkedIn) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://greatinsuranceteam.com/">
+<meta property="og:title" content="Great Insurance Team | Seguro de Salud, Vida, Auto y Medicare Advantage en Español">
+<meta property="og:description" content="Agentes de seguros en español en Florida. Planes ACA, vida, auto, Medicare Advantage y suplementarios. Asesoría gratuita en español. Más de 500 familias protegidas.">
+<meta property="og:locale" content="es_US">
+<meta property="og:site_name" content="Great Insurance Team">
+
+<!-- TWITTER CARD -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Great Insurance Team | Seguros de Salud, Vida, Auto y Medicare Advantage en Español — Florida">
+<meta name="twitter:description" content="Seguro de salud ACA, vida, auto, Medicare Advantage y suplementarios. Servicio en español, sin costo de asesoría. Llámanos: (954) 394-7439">
+
+<!-- SCHEMA.ORG — Local Business -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "InsuranceAgency",
+  "name": "Great Insurance Team",
+  "description": "Agencia de seguros especializada en seguros de salud ACA, vida y auto para familias hispanas en Florida y múltiples estados.",
+  "url": "https://greatinsuranceteam.com",
+  "telephone": ["+19543947439", "+19548251214"],
+  "email": ["lvera@greatinsuranceteam.com", "delbert@greatinsuranceteam.com"],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bonita Springs",
+    "addressRegion": "FL",
+    "addressCountry": "US"
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "Florida"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios de Seguros",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Seguro de Salud ACA"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Seguro de Vida"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Seguro de Auto"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Medicare Advantage"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Seguros Suplementarios"}}
+    ]
+  },
+  "employee": [
+    {"@type": "Person", "name": "Liliana Vera", "jobTitle": "Agente de Seguros"},
+    {"@type": "Person", "name": "Delbert Useches", "jobTitle": "Agente de Seguros"}
+  ],
+  "knowsLanguage": ["es", "en"],
+  "priceRange": "Gratis",
+  "sameAs": [
+    "https://www.instagram.com/greatinsuranceteam",
+    "https://www.facebook.com/greatinsuranceteam"
+  ]
 }
+</script>
 
-# Traer cambios de Claude
-git pull
+<title>Great Insurance Team | Seguro de Salud, Vida, Auto y Medicare Advantage en Español — Florida</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#050c1c;--navy-mid:#0b1628;--navy-card:#101e38;--navy-hi:#162444;
+  --red:#b82c16;--red2:#d93e22;--gold:#c4870e;--gold2:#e8a828;--gold3:#f7c858;
+  --silver:#c4d2e8;--silver2:#e2eaf8;--muted:#7a90b4;--white:#ffffff;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Barlow',sans-serif;background:var(--navy);color:var(--silver2);overflow-x:hidden}
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 90% 55% at 50% -10%,rgba(24,64,160,0.22) 0%,transparent 65%),
+    radial-gradient(ellipse 50% 40% at 15% 70%,rgba(184,44,22,0.11) 0%,transparent 60%),
+    radial-gradient(ellipse 40% 30% at 85% 30%,rgba(196,135,14,0.08) 0%,transparent 55%);
+}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 6vw;background:rgba(5,12,28,0.92);backdrop-filter:blur(18px);border-bottom:1px solid rgba(196,210,232,0.08);transition:box-shadow 0.3s}
+.nav-brand{font-family:'Barlow Condensed',sans-serif;font-size:1.15rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:var(--silver2)}
+.nav-brand em{color:var(--gold2);font-style:normal}
+.nav-menu{display:flex;gap:2rem;list-style:none}
+.nav-menu a{font-size:0.8rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s}
+.nav-menu a:hover{color:var(--gold2)}
+.nav-cta{font-family:'Barlow Condensed',sans-serif;font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--navy);background:linear-gradient(135deg,var(--gold2),var(--gold));padding:9px 22px;border-radius:2px;border:none;cursor:pointer;text-decoration:none;transition:all 0.2s}
+.nav-cta:hover{opacity:0.85;transform:translateY(-1px)}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:110px 6vw 80px;overflow:hidden}
+.hero-orbits{position:absolute;right:-6vw;top:50%;transform:translateY(-50%);width:580px;height:580px;pointer-events:none}
+.orbit{border-radius:50%;border:1px solid;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
+.orbit-1{width:580px;height:580px;border-color:rgba(32,80,192,0.18);animation:spin 40s linear infinite}
+.orbit-2{width:420px;height:420px;border-color:rgba(196,135,14,0.14);animation:spin 28s linear infinite reverse}
+.orbit-3{width:280px;height:280px;border-color:rgba(184,44,22,0.18);animation:spin 18s linear infinite}
+.orbit-dot{width:8px;height:8px;border-radius:50%;position:absolute;top:-4px;left:50%;transform:translateX(-50%)}
+.orbit-1 .orbit-dot{background:rgba(64,128,240,0.8)}
+.orbit-2 .orbit-dot{background:rgba(232,168,40,0.9)}
+.orbit-3 .orbit-dot{background:rgba(217,62,34,0.8)}
+@keyframes spin{from{transform:translate(-50%,-50%) rotate(0deg)}to{transform:translate(-50%,-50%) rotate(360deg)}}
+.hero-content{position:relative;z-index:2;max-width:660px}
+.hero-pill{display:inline-flex;align-items:center;gap:10px;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold2);border:1px solid rgba(232,168,40,0.35);padding:6px 16px;border-radius:2px;margin-bottom:2rem}
+.hero-pill span{width:6px;height:6px;border-radius:50%;background:var(--gold2);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.7)}}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,5.5vw,4.8rem);font-weight:800;line-height:1.05;color:var(--white);margin-bottom:1.6rem}
+.hero-title .accent{color:var(--gold2)}
+.hero-hook{font-size:1.05rem;font-weight:300;line-height:1.85;color:var(--muted);max-width:520px;margin-bottom:2.8rem;border-left:2px solid var(--red2);padding-left:1.2rem}
+.hero-hook strong{color:var(--silver2);font-weight:500}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.btn-hero{font-family:'Barlow Condensed',sans-serif;font-size:0.95rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--navy);background:linear-gradient(135deg,var(--gold3),var(--gold));padding:15px 36px;border-radius:2px;border:none;cursor:pointer;text-decoration:none;transition:all 0.25s;display:inline-block}
+.btn-hero:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(196,135,14,0.3)}
+.btn-ghost{font-family:'Barlow Condensed',sans-serif;font-size:0.88rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--silver2);background:transparent;padding:14px 28px;border-radius:2px;border:1px solid rgba(196,210,232,0.25);text-decoration:none;transition:all 0.2s;display:inline-block}
+.btn-ghost:hover{border-color:var(--gold2);color:var(--gold2);background:rgba(196,135,14,0.06)}
+.servicios{padding:100px 6vw;background:linear-gradient(160deg,var(--navy-mid) 0%,var(--navy) 60%)}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:800;text-align:center;color:var(--white);margin-bottom:3.5rem}
+.section-title .accent{color:var(--gold2)}
+.s-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:2rem;max-width:1400px;margin:0 auto}
+.s-card{background:linear-gradient(160deg,rgba(22,36,68,0.48) 0%,rgba(16,30,56,0.36) 100%);border:1px solid rgba(196,210,232,0.08);border-radius:12px;padding:2.2rem 1.8rem;transition:all 0.35s;cursor:pointer;position:relative;overflow:hidden}
+.s-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold2),transparent);opacity:0;transition:opacity 0.3s}
+.s-card:hover{transform:translateY(-6px);background:linear-gradient(160deg,rgba(22,36,68,0.75) 0%,rgba(16,30,56,0.55) 100%);border-color:rgba(232,168,40,0.18);box-shadow:0 14px 50px rgba(0,0,0,0.35)}
+.s-card:hover::before{opacity:1}
+.s-icon{font-size:2.8rem;margin-bottom:1.2rem}
+.s-name{font-family:'Barlow Condensed',sans-serif;font-size:1.45rem;font-weight:700;letter-spacing:0.04em;color:var(--silver2);margin-bottom:0.9rem}
+.s-desc{font-size:0.92rem;font-weight:300;line-height:1.75;color:var(--muted)}
+.trust{padding:90px 6vw;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-card) 100%)}
+.trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:3rem;max-width:1200px;margin:0 auto;text-align:center}
+.trust-item{display:flex;flex-direction:column;align-items:center;gap:1.2rem}
+.trust-icon{font-size:3.5rem}
+.trust-title{font-family:'Barlow Condensed',sans-serif;font-size:1.25rem;font-weight:700;letter-spacing:0.05em;color:var(--silver2)}
+.trust-text{font-size:0.9rem;font-weight:300;line-height:1.7;color:var(--muted);max-width:340px}
+.faq{padding:90px 6vw;background:var(--navy)}
+.faq-list{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:1rem}
+.faq-item{background:rgba(255,255,255,0.03);border:1px solid rgba(196,210,232,0.1);border-radius:15px;padding:30px;transition:all 0.3s;cursor:pointer}
+.faq-item:hover{background:rgba(255,255,255,0.05);border-color:rgba(232,168,40,0.2)}
+.faq-q{font-family:'Barlow Condensed',sans-serif;font-size:1.3rem;font-weight:700;color:var(--gold2);margin-bottom:15px;display:flex;align-items:center;gap:10px}
+.faq-q::before{content:'Q:';display:inline-block;font-size:1rem;opacity:0.6}
+.faq-a{font-size:0.95rem;line-height:1.8;color:var(--silver);padding-left:30px}
+.faq-a strong{color:var(--silver2);font-weight:600}
+.contacto{padding:100px 6vw;background:linear-gradient(135deg,var(--navy-card) 0%,var(--navy-hi) 100%);position:relative;overflow:hidden}
+.contacto::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(232,168,40,0.08) 0%,transparent 70%);top:-200px;right:-150px;pointer-events:none}
+.f-wrap{max-width:700px;margin:0 auto;background:rgba(16,30,56,0.7);border:1px solid rgba(196,210,232,0.1);border-radius:18px;padding:3rem 2.5rem;position:relative;z-index:2}
+.f-title{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:800;text-align:center;color:var(--white);margin-bottom:1rem}
+.f-subtitle{font-size:1rem;font-weight:300;text-align:center;color:var(--muted);margin-bottom:2.5rem;line-height:1.6}
+.f-group{margin-bottom:1.5rem}
+.f-label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:0.8rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--silver);margin-bottom:0.6rem}
+.f-input,.f-select,.f-textarea{width:100%;font-family:inherit;font-size:0.95rem;color:var(--silver2);background:rgba(5,12,28,0.6);border:1px solid rgba(196,210,232,0.15);border-radius:6px;padding:13px 16px;transition:all 0.2s}
+.f-input:focus,.f-select:focus,.f-textarea:focus{outline:none;border-color:var(--gold2);background:rgba(5,12,28,0.85)}
+.f-textarea{min-height:100px;resize:vertical}
+.f-note{font-size:0.82rem;color:var(--muted);margin-top:0.5rem;line-height:1.6}
+.f-submit{font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--navy);background:linear-gradient(135deg,var(--gold3),var(--gold));border:none;border-radius:6px;padding:16px 40px;cursor:pointer;width:100%;transition:all 0.25s;position:relative;overflow:hidden}
+.f-submit:hover:not(:disabled){transform:translateY(-3px);box-shadow:0 10px 30px rgba(196,135,14,0.4)}
+.f-submit:disabled{opacity:0.6;cursor:not-allowed}
+.f-submit.loading{pointer-events:none}
+.spinner{display:inline-block;width:14px;height:14px;border:2px solid var(--navy);border-top-color:transparent;border-radius:50%;animation:spin-icon 0.8s linear infinite;margin-right:8px}
+@keyframes spin-icon{to{transform:rotate(360deg)}}
+#f-error{display:none;background:rgba(184,44,22,0.2);border:1px solid var(--red2);border-radius:8px;padding:15px;margin-top:1rem;color:var(--red2);font-size:0.9rem;text-align:center}
+#form-ok{display:none;text-align:center;padding:2rem}
+#form-ok h3{font-size:1.8rem;color:var(--gold2);margin-bottom:1rem}
+#form-ok p{color:var(--silver2);line-height:1.7}
+footer{background:var(--navy-mid);border-top:1px solid rgba(196,210,232,0.08);padding:50px 6vw 30px}
+.f-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:3rem;margin-bottom:3rem}
+.f-brand{font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--silver2)}
+.f-brand em{color:var(--gold2);font-style:normal}
+.f-contacts{display:flex;flex-wrap:wrap;gap:2rem}
+.f-ci{display:flex;flex-direction:column;gap:0.4rem}
+.f-ci span{font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted)}
+.f-ci a{font-size:0.9rem;color:var(--silver2);text-decoration:none;transition:color 0.2s}
+.f-ci a:hover{color:var(--gold2)}
+.f-bottom{border-top:1px solid rgba(196,210,232,0.08);padding-top:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}
+.f-copy{font-size:0.78rem;color:var(--muted);line-height:1.6;max-width:600px}
+.f-links{display:flex;gap:1.5rem;list-style:none}
+.f-links a{font-size:0.82rem;color:var(--muted);text-decoration:none;transition:color 0.2s}
+.f-links a:hover{color:var(--gold2)}
+@media(max-width:768px){.nav-menu{display:none}.hero{padding-top:90px}.hero-orbits{width:420px;height:420px;right:-100px}.orbit-1{width:420px;height:420px}.orbit-2{width:300px;height:300px}.orbit-3{width:200px;height:200px}.f-top{flex-direction:column}.f-bottom{flex-direction:column;align-items:flex-start}}
+</style>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+(function(){emailjs.init("0t_pUiTMOr-y5Mq7V")})();
+const EJS_SERVICE_ID='service_d0jxmzk';
+const EJS_TEMPLATE_ID='template_contact_form';
+</script>
+</head>
+<body>
+<nav id="navbar">
+  <div class="nav-brand">Great <em>Insurance</em> Team</div>
+  <ul class="nav-menu">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#nosotros">Por Qué Nosotros</a></li>
+    <li><a href="#faq">Preguntas</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <a href="#contacto" class="nav-cta">Cotiza Gratis →</a>
+</nav>
 
-# Subir a GitHub
-git push origin main
+<section class="hero">
+  <div class="hero-orbits">
+    <div class="orbit orbit-1"><div class="orbit-dot"></div></div>
+    <div class="orbit orbit-2"><div class="orbit-dot"></div></div>
+    <div class="orbit orbit-3"><div class="orbit-dot"></div></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-pill"><span></span>Servicio 100% en Español</div>
+    <h1 class="hero-title">Seguros de Salud, Vida, Auto y <span class="accent">Medicare Advantage</span> para Familias Hispanas</h1>
+    <p class="hero-hook"><strong>500+ familias protegidas</strong> en Florida y más estados. Cotizaciones gratuitas en español, asesoría sin costo, sin sorpresas. <strong>ACA (Obamacare), Medicare Advantage, Seguros Suplementarios, Vida, Auto, Dental, y Tax Service.</strong></p>
+    <div class="hero-actions">
+      <a href="#contacto" class="btn-hero">Cotiza Gratis →</a>
+      <a href="tel:9543947439" class="btn-ghost">☎ Llama Ahora</a>
+    </div>
+  </div>
+</section>
 
-echo ""
-echo "✅ LISTO - Cambios publicados"
-echo "⏳ Vercel está deployando... (30 segundos)"
-echo "🌐 Verifica: https://greatinsuranceteam.com"
-echo ""
-echo "CAMBIOS APLICADOS:"
-echo "  ✅ Medicare Advantage agregado"
-echo "  ✅ Seguros Suplementarios agregados"
-echo "  ✅ FAQ con 8 preguntas SEO"
-echo "  ✅ 33 reviews (actualizado)"
+<section id="servicios" class="servicios">
+  <h2 class="section-title">Nuestros <span class="accent">Servicios</span></h2>
+  <div class="s-grid">
+    <div class="s-card">
+      <div class="s-icon">🏥</div>
+      <h3 class="s-name">Seguro de Salud (ACA)</h3>
+      <p class="s-desc">Planes Obamacare con subsidios federales. Cobertura médica completa para ti y tu familia. Cotización en línea disponible.</p>
+    </div>
+    <div class="s-card">
+      <div class="s-icon">👨‍👩‍👧‍👦</div>
+      <h3 class="s-name">Seguro de Vida</h3>
+      <p class="s-desc">Protección financiera para tu familia en caso de lo inesperado. Term Life, Whole Life, y Universal Life disponibles.</p>
+    </div>
+    <div class="s-card">
+      <div class="s-icon">🚗</div>
+      <h3 class="s-name">Seguro de Auto</h3>
+      <p class="s-desc">Cobertura completa o básica para tu vehículo. Comparamos múltiples aseguradoras para darte el mejor precio.</p>
+    </div>
+    <div class="s-card">
+      <div class="s-icon">🏢</div>
+      <h3 class="s-name">Seguro Grupal para Empresas</h3>
+      <p class="s-desc">Planes de salud grupales para empresas de 2 a 50 empleados. Atrae y retiene talento con beneficios competitivos.</p>
+    </div>
+    <div class="s-card">
+      <div class="s-icon">🩺</div>
+      <h3 class="s-name">Medicare Advantage</h3>
+      <p class="s-desc">Para personas de 65+ años o con discapacidad. Planes que cubren médico, hospital, medicamentos, dental, visión, y más. Muchos planes a $0/mes.</p>
+    </div>
+    <div class="s-card">
+      <div class="s-icon">🛡️</div>
+      <h3 class="s-name">Seguros Suplementarios</h3>
+      <p class="s-desc">Protección extra para accidentes, enfermedades críticas, hospitalización, dental, y visión. Cubre lo que tu seguro principal no cubre.</p>
+    </div>
+    <div class="s-card">
+      <div class="s-icon">🦷</div>
+      <h3 class="s-name">Seguro Dental</h3>
+      <p class="s-desc">Planes dentales individuales y familiares. Limpieza, empastes, ortodoncia, y más. Sin periodo de espera en muchos planes.</p>
+    </div>
+    <div class="s-card">
+      <div class="s-icon">📄</div>
+      <h3 class="s-name">Tax Service</h3>
+      <p class="s-desc">Preparación de impuestos en español. Maximiza tu reembolso, evita errores costosos. Servicio personalizado para individuos y pequeños negocios.</p>
+    </div>
+  </div>
+</section>
+
+<section id="nosotros" class="trust">
+  <h2 class="section-title">Por Qué <span class="accent">Confiar en Nosotros</span></h2>
+  <div class="trust-grid">
+    <div class="trust-item">
+      <div class="trust-icon">🇺🇸</div>
+      <h3 class="trust-title">Licenciados y Certificados</h3>
+      <p class="trust-text">Agentes licenciados en Florida y múltiples estados. Cumplimos con todas las regulaciones estatales y federales.</p>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">💬</div>
+      <h3 class="trust-title">Servicio 100% en Español</h3>
+      <p class="trust-text">Todo el proceso en tu idioma. Sin barreras de comunicación, sin estrés. Te entendemos porque hablamos tu idioma.</p>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">🎯</div>
+      <h3 class="trust-title">Sin Costo de Asesoría</h3>
+      <p class="trust-text">Nuestro servicio es gratuito para ti. Las aseguradoras nos pagan directamente. Tú pagas el mismo precio que si compraras solo.</p>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">⭐</div>
+      <h3 class="trust-title">500+ Familias Protegidas</h3>
+      <p class="trust-text">Más de 500 familias hispanas confían en nosotros para proteger su salud, vida, y patrimonio. Lee nuestras reseñas en Google.</p>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="faq">
+  <h2 class="section-title">Preguntas <span class="accent">Frecuentes</span></h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <h3 class="faq-q">¿Cuánto cuesta un seguro de salud ACA en Florida?</h3>
+      <p class="faq-a">El costo depende de tu edad, ingresos, y tamaño de familia. Muchas familias califican para <strong>subsidios federales que reducen el costo a $0-50/mes</strong>. Usa nuestra cotización en línea para ver tu precio exacto en segundos.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">¿Qué es un seguro suplementario y por qué lo necesito?</h3>
+      <p class="faq-a">Los seguros suplementarios cubren gastos que tu seguro principal NO cubre: deducibles, copagos, pérdida de ingresos por accidente, diagnóstico de cáncer, etc. Son económicos ($20-60/mes) y te dan <strong>paz mental financiera</strong>.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">¿Ustedes venden seguros en otros estados además de Florida?</h3>
+      <p class="faq-a">Para <strong>seguros de salud ACA (Obamacare)</strong>, tenemos licencias en múltiples estados: Florida, Texas, Georgia, Carolina del Norte, Tennessee, y más. Para seguros de vida, auto y Medicare Advantage, principalmente atendemos Florida. <strong>Pregúntanos por tu estado específico.</strong></p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">¿Qué es Medicare Advantage y quién califica?</h3>
+      <p class="faq-a">Medicare Advantage es un plan privado para personas de <strong>65+ años o con discapacidad permanente</strong>. Incluye todo lo que Medicare original cubre, PLUS extras como dental, visión, medicamentos, y gimnasio. Muchos planes cuestan <strong>$0 al mes</strong>. Si ya tienes Medicare Parte A y B, puedes cambiarte a Advantage.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">¿Por qué debería usar un agente en lugar de comprar directo?</h3>
+      <p class="faq-a">Un agente te ahorra tiempo, dinero y estrés. Comparamos <strong>decenas de planes</strong> de múltiples aseguradoras para encontrar el mejor para TI. Te explicamos todo en español, te ayudamos con el papeleo, y te damos soporte continuo. <strong>No pagas más por usar un agente.</strong></p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">¿Cuánto tarda el proceso de inscripción?</h3>
+      <p class="faq-a">Para seguros de salud ACA: <strong>15-30 minutos</strong> si tienes todos tus documentos listos (SSN, ingresos, estado migratorio). Para otros seguros: usualmente 30-45 minutos. Te guiamos paso a paso en español.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">¿Qué documentos necesito para cotizar un seguro de salud?</h3>
+      <p class="faq-a">Para una cotización básica solo necesitas: <strong>edades de todos en tu hogar, ZIP code, e ingreso aproximado</strong>. Para inscribirte necesitarás: SSN (o documentos de inmigración), comprobante de ingresos, y fechas de nacimiento.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">¿Ofrecen servicios de preparación de impuestos (taxes)?</h3>
+      <p class="faq-a">Sí, ofrecemos <strong>Tax Service en español</strong> durante la temporada de impuestos (enero-abril). Preparamos taxes personales y para pequeños negocios. Maximizamos tu reembolso y evitamos errores costosos. <strong>Llámanos para agendar tu cita.</strong></p>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="contacto">
+  <div class="f-wrap">
+    <div id="form-body">
+      <h2 class="f-title">Cotiza Gratis</h2>
+      <p class="f-subtitle">Completa el formulario y te contactamos en menos de 24 horas. Sin compromiso, sin costo.</p>
+      <div class="f-group">
+        <label class="f-label" for="f-nom">Nombre *</label>
+        <input class="f-input" type="text" id="f-nom" placeholder="Juan" required>
+      </div>
+      <div class="f-group">
+        <label class="f-label" for="f-ape">Apellido</label>
+        <input class="f-input" type="text" id="f-ape" placeholder="Pérez">
+      </div>
+      <div class="f-group">
+        <label class="f-label" for="f-tel">Teléfono *</label>
+        <input class="f-input" type="tel" id="f-tel" placeholder="(954) 123-4567" required>
+      </div>
+      <div class="f-group">
+        <label class="f-label" for="f-email">Email</label>
+        <input class="f-input" type="email" id="f-email" placeholder="juan@example.com">
+      </div>
+      <div class="f-group">
+        <label class="f-label" for="f-svc">¿Qué tipo de cobertura te interesa? *</label>
+        <select class="f-select" id="f-svc" onchange="checkACA()" required>
+          <option value="">-- Selecciona --</option>
+          <option value="Seguro de Salud (ACA)">Seguro de Salud (ACA / Obamacare)</option>
+          <option value="Medicare Advantage">Medicare Advantage</option>
+          <option value="Seguros Suplementarios">Seguros Suplementarios (Accidente, Enfermedad Crítica, Hospitalización)</option>
+          <option value="Seguro de Vida">Seguro de Vida</option>
+          <option value="Seguro de Auto">Seguro de Auto</option>
+          <option value="Seguro Dental">Seguro Dental</option>
+          <option value="Seguro Grupal para Empresas (2-50 empleados)">Seguro Grupal para Empresas (2-50 empleados)</option>
+          <option value="Tax Service">Tax Service / Preparación de Impuestos</option>
+          <option value="Otro">Otro (especificar en mensaje)</option>
+        </select>
+        <p id="aca-note" class="f-note" style="display:none"></p>
+      </div>
+      <div class="f-group">
+        <label class="f-label" for="f-agent">Agente de Preferencia (Opcional)</label>
+        <select class="f-select" id="f-agent">
+          <option value="">-- Sin Preferencia --</option>
+          <option value="Liliana Vera">Liliana Vera</option>
+          <option value="Delbert Useches">Delbert Useches</option>
+          <option value="Carolina Vera">Carolina Vera</option>
+        </select>
+      </div>
+      <div class="f-group">
+        <label class="f-label" for="f-msg">Mensaje Adicional (Opcional)</label>
+        <textarea class="f-textarea" id="f-msg" placeholder="Cuéntanos más sobre tu situación o necesidades..."></textarea>
+      </div>
+      <button class="f-submit" onclick="enviar()">Quiero que me Contacten →</button>
+      <div id="f-error">❌ Hubo un error al enviar el formulario. Intenta llamarnos directamente o escribe a nuestro email.</div>
+    </div>
+    <div id="form-ok">
+      <h3>✅ ¡Mensaje Enviado!</h3>
+      <p>Gracias por contactarnos. Revisaremos tu solicitud y te llamaremos o escribiremos en menos de 24 horas.<br><br>Si necesitas atención inmediata, llámanos al <strong>(954) 394-7439</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="f-top">
+    <div class="f-brand">Great <em>Insurance</em> Team</div>
+    <div class="f-contacts">
+      <div class="f-ci">
+        <span>Liliana Vera</span>
+        <a href="tel:9543947439">(954) 394-7439</a>
+        <a href="mailto:lvera@greatinsuranceteam.com">lvera@greatinsuranceteam.com</a>
+      </div>
+      <div class="f-ci">
+        <span>Delbert Useches</span>
+        <a href="tel:9548251214">(954) 825-1214</a>
+        <a href="mailto:delbert@greatinsuranceteam.com">delbert@greatinsuranceteam.com</a>
+      </div>
+      <div class="f-ci">
+        <span>Carolina Vera</span>
+        <a href="tel:9542102173">(954) 210-2173</a>
+      </div>
+    </div>
+  </div>
+  <div class="f-bottom">
+    <p class="f-copy">© 2025 Great Insurance Team. Todos los derechos reservados.<br>Agentes licenciados en el estado de Florida y en múltiples estados para seguros de salud ACA.<br>Las coberturas, precios y disponibilidad varían por estado y perfil del solicitante.</p>
+    <ul class="f-links">
+      <li><a href="#">Política de Privacidad</a></li>
+      <li><a href="#">Aviso Legal</a></li>
+    </ul>
+  </div>
+</footer>
+
+<section style="padding:80px 20px;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%)">
+  <div style="max-width:1200px;margin:0 auto;text-align:center">
+    <h2 style="font-size:2.5em;margin-bottom:20px;color:#f4c430">⭐ Lo Que Dicen Nuestros Clientes ⭐</h2>
+    <p style="font-size:3em;font-weight:bold;color:white;margin:20px 0">5.0</p>
+    <p style="font-size:1.2em;color:#ccc;margin-bottom:40px">Basado en 33 reseñas de Google</p>
+    <a href="https://g.page/r/CfgoLGTznyLPEBM/review" target="_blank" style="display:inline-block;padding:15px 40px;background:#f4c430;color:#1a1a2e;text-decoration:none;border-radius:50px;font-weight:bold;font-size:1.1em">📝 Deja Tu Opinión en Google</a>
+  </div>
+</section>
+
+<script>
+async function enviar(){
+  const nom=document.getElementById('f-nom').value.trim();
+  const ape=document.getElementById('f-ape').value.trim();
+  const tel=document.getElementById('f-tel').value.trim();
+  const email=document.getElementById('f-email').value.trim();
+  const svc=document.getElementById('f-svc').value;
+  const agente=document.getElementById('f-agent').value;
+  const msg=document.getElementById('f-msg').value.trim();
+  const errDiv=document.getElementById('f-error');
+  const btn=document.querySelector('.f-submit');
+  if(!nom||!tel||!svc){alert('Por favor completa los campos requeridos: Nombre, Teléfono y Tipo de Cobertura.');return}
+  if(svc==='Seguro de Salud (ACA)'){window.open('https://www.enrollsalud.com/q/liliana-vera','_blank');return}
+  if(svc==='Seguro Grupal para Empresas (2-50 empleados)'){window.open('https://www.enrollsalud.com/q/delbert','_blank');return}
+  btn.disabled=true;btn.classList.add('loading');btn.innerHTML='<span class="spinner"></span>Enviando...';errDiv.style.display='none';
+  const params={cliente_nombre:nom+' '+ape,cliente_telefono:tel,cliente_email:email||'No proporcionado',cobertura:svc,agente_preferido:agente||'Sin preferencia',mensaje:msg||'Sin mensaje adicional',fecha:new Date().toLocaleString('es-US',{timeZone:'America/New_York',dateStyle:'full',timeStyle:'short'})};
+  try{await emailjs.send(EJS_SERVICE_ID,EJS_TEMPLATE_ID,params);document.getElementById('form-body').style.display='none';document.getElementById('form-ok').style.display='block'}catch(err){console.error('EmailJS error:',err);btn.disabled=false;btn.classList.remove('loading');btn.textContent='Quiero que me Contacten →';errDiv.style.display='block'}
+}
+function checkACA(){
+  const svc=document.getElementById('f-svc').value;
+  const note=document.getElementById('aca-note');
+  const btn=document.querySelector('.f-submit');
+  if(svc==='Seguro de Salud (ACA)'){note.style.display='block';note.innerHTML='🔗 <strong style="color:var(--gold2)">Cotización en línea disponible.</strong> Al enviar, serás redirigido directamente a nuestra herramienta de cotización ACA para obtener tu precio al instante.';btn.textContent='Cotizar Seguro de Salud →'}else if(svc==='Seguro Grupal para Empresas (2-50 empleados)'){note.style.display='block';note.innerHTML='🏢 <strong style="color:var(--gold2)">Cobertura empresarial.</strong> Serás dirigido a nuestro portal de asesoría para empresas. Delbert Useches se encargará personalmente de tu caso.';btn.textContent='Solicitar Asesoría Empresarial →'}else{note.style.display='none';btn.textContent='Quiero que me Contacten →'}
+}
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}})});
+window.addEventListener('scroll',()=>{document.getElementById('navbar').style.boxShadow=window.scrollY>20?'0 4px 40px rgba(0,0,0,0.6)':'none'});
+</script>
+</body>
+</html>
