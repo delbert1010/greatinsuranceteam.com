@@ -542,14 +542,14 @@ footer{position:relative;z-index:2;background:rgba(3,8,18,0.98);border-top:1px s
       <div class="svc-line"></div>
       <div class="svc-ico">➕</div>
       <div class="svc-name">Seguros Suplementarios</div>
-      <div class="svc-badge">Medigap · Medicare Supplement</div>
-      <p class="svc-desc">Los planes suplementarios de Medicare cubren los costos que Medicare Original no paga — copagos, deducibles y coseguros — para que nunca te sorprendan facturas inesperadas.</p>
+      <div class="svc-badge">Cáncer · Accidentes · Enfermedades Críticas</div>
+      <p class="svc-desc">Coberturas adicionales que pagan beneficios directos a ti cuando ocurre lo inesperado — cáncer, accidentes, infarto o derrame cerebral. Protección económica para tu familia cuando más la necesitas.</p>
       <ul class="svc-list">
-        <li>Cubre copagos, deducibles y coseguros de Medicare Original</li>
-        <li>Libertad para elegir cualquier médico o hospital que acepte Medicare</li>
-        <li>Prima mensual predecible, sin sorpresas en facturación</li>
-        <li>No requiere autorización previa ni referidos de especialistas</li>
-        <li>Te orientamos para elegir el plan correcto según tu situación</li>
+        <li>Pago directo al asegurado, no al hospital o médico</li>
+        <li>Ayuda con gastos médicos, pérdida de ingresos y deducibles</li>
+        <li>Cobertura para cáncer, accidentes graves, infarto y derrame</li>
+        <li>Beneficios que puedes usar como necesites para tu familia</li>
+        <li>Complementa tu seguro principal y da tranquilidad económica</li>
       </ul>
     </div>
   </div>
@@ -715,7 +715,7 @@ footer{position:relative;z-index:2;background:rgba(3,8,18,0.98);border-top:1px s
             <option value="">— Seleccionar —</option>
             <option>Seguro de Salud (ACA)</option>
             <option>Medicare Advantage</option>
-            <option>Seguros Suplementarios (Medigap)</option>
+            <option>Seguros Suplementarios</option>
             <option>Seguro de Vida</option>
             <option>Seguro de Auto</option>
             <option>Más de una cobertura</option>
@@ -736,156 +736,4 @@ footer{position:relative;z-index:2;background:rgba(3,8,18,0.98);border-top:1px s
         </div>
         <div class="fg">
           <label>Cuéntanos algo (opcional)</label>
-          <textarea id="f-msg" placeholder="¿Cuántos miembros tiene tu familia? ¿Tienes alguna situación especial que quieras mencionar?"></textarea>
-        </div>
-        <button class="f-submit" onclick="enviar()">Quiero que me Contacten →</button>
-        <div class="f-error" id="f-error">⚠️ No se pudo enviar el mensaje. Por favor llámanos directamente al <strong>(954) 394-7439</strong> o <strong>(954) 825-1214</strong>.</div>
-        <p class="f-note">Tus datos son confidenciales y se usan únicamente para contactarte.<br>Sin spam, sin presión — solo asesoría honesta.</p>
-      </div>
-      <div class="f-ok" id="form-ok">
-        <div class="ok-ico">✓</div>
-        <h3>¡Tu solicitud fue enviada!</h3>
-        <p>Uno de nuestros agentes se comunicará contigo en menos de 24 horas.<br>Gracias por confiar en el Great Insurance Team.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="f-top">
-    <div class="f-brand">Great <em>Insurance</em> Team</div>
-    <div class="f-contacts">
-      <div class="f-ci">
-        <span>Liliana Vera</span>
-        <a href="tel:9543947439">(954) 394-7439</a>
-        <a href="mailto:lvera@greatinsuranceteam.com">lvera@greatinsuranceteam.com</a>
-      </div>
-      <div class="f-ci">
-        <span>Delbert Useches</span>
-        <a href="tel:9548251214">(954) 825-1214</a>
-        <a href="mailto:delbert@greatinsuranceteam.com">delbert@greatinsuranceteam.com</a>
-      </div>
-      <div class="f-ci">
-        <span>Carolina Vera</span>
-        <a href="tel:9542102173">(954) 210-2173</a>
-      </div>
-    </div>
-  </div>
-  <div class="f-bottom">
-    <p class="f-copy">
-      © 2025 Great Insurance Team. Todos los derechos reservados.<br>
-      Agentes licenciados en el estado de Florida y en múltiples estados para seguros de salud ACA.<br>
-      Las coberturas, precios y disponibilidad varían por estado y perfil del solicitante.
-    </p>
-    <ul class="f-links">
-      <li><a href="#">Política de Privacidad</a></li>
-      <li><a href="#">Aviso Legal</a></li>
-    </ul>
-  </div>
-</footer>
-
-<script>
-async function enviar(){
-  const nom    = document.getElementById('f-nom').value.trim();
-  const ape    = document.getElementById('f-ape').value.trim();
-  const tel    = document.getElementById('f-tel').value.trim();
-  const email  = document.getElementById('f-email').value.trim();
-  const svc    = document.getElementById('f-svc').value;
-  const agente = document.getElementById('f-agent').value;
-  const msg    = document.getElementById('f-msg').value.trim();
-  const errDiv = document.getElementById('f-error');
-  const btn    = document.querySelector('.f-submit');
-
-  if(!nom||!tel||!svc){
-    alert('Por favor completa los campos requeridos: Nombre, Teléfono y Tipo de Cobertura.');
-    return;
-  }
-
-  /* Redirecciones directas — sin email */
-  if(svc==='Seguro de Salud (ACA)'){
-    window.open('https://www.enrollsalud.com/q/liliana-vera','_blank');
-    return;
-  }
-  if(svc==='Medicare Advantage'){
-    window.open('https://www.enrollsalud.com/q/liliana-vera','_blank');
-    return;
-  }
-  if(svc==='Seguros Suplementarios (Medigap)'){
-    window.open('https://www.enrollsalud.com/q/liliana-vera','_blank');
-    return;
-  }
-  if(svc==='Seguro Grupal para Empresas (2-50 empleados)'){
-    window.open('https://www.enrollsalud.com/q/delbert','_blank');
-    return;
-  }
-
-  /* Vida / Auto / Otro → enviar email real */
-  btn.disabled = true;
-  btn.classList.add('loading');
-  btn.innerHTML = '<span class="spinner"></span>Enviando...';
-  errDiv.style.display = 'none';
-
-  const params = {
-    cliente_nombre:  nom + ' ' + ape,
-    cliente_telefono: tel,
-    cliente_email:   email || 'No proporcionado',
-    cobertura:       svc,
-    agente_preferido: agente || 'Sin preferencia',
-    mensaje:         msg || 'Sin mensaje adicional',
-    fecha:           new Date().toLocaleString('es-US',{timeZone:'America/New_York',
-                       dateStyle:'full',timeStyle:'short'})
-  };
-
-  try {
-    await emailjs.send(EJS_SERVICE_ID, EJS_TEMPLATE_ID, params);
-    document.getElementById('form-body').style.display = 'none';
-    document.getElementById('form-ok').style.display   = 'block';
-  } catch(err) {
-    console.error('EmailJS error:', err);
-    btn.disabled = false;
-    btn.classList.remove('loading');
-    btn.textContent = 'Quiero que me Contacten →';
-    errDiv.style.display = 'block';
-  }
-}
-function checkACA(){
-  const svc=document.getElementById('f-svc').value;
-  const note=document.getElementById('aca-note');
-  const btn=document.querySelector('.f-submit');
-  if(svc==='Seguro de Salud (ACA)'){
-    note.style.display='block';
-    note.innerHTML='🔗 <strong style="color:var(--gold2)">Cotización en línea disponible.</strong> Al enviar, serás redirigido directamente a nuestra herramienta de cotización ACA para obtener tu precio al instante.';
-    btn.textContent='Cotizar Seguro de Salud →';
-  } else if(svc==='Medicare Advantage'){
-    note.style.display='block';
-    note.innerHTML='🏥 <strong style="color:var(--gold2)">Medicare Advantage disponible.</strong> Serás dirigido a nuestro portal de cotización para explorar planes de Medicare Advantage con beneficios adicionales.';
-    btn.textContent='Ver Planes Medicare Advantage →';
-  } else if(svc==='Seguros Suplementarios (Medigap)'){
-    note.style.display='block';
-    note.innerHTML='➕ <strong style="color:var(--gold2)">Seguros Suplementarios disponibles.</strong> Te dirigiremos a nuestra plataforma de cotización para comparar planes Medigap que cubren tus gastos de Medicare.';
-    btn.textContent='Ver Planes Suplementarios →';
-  } else if(svc==='Seguro Grupal para Empresas (2-50 empleados)'){
-    note.style.display='block';
-    note.innerHTML='🏢 <strong style="color:var(--gold2)">Cobertura empresarial.</strong> Serás dirigido a nuestro portal de asesoría para empresas. Delbert Useches se encargará personalmente de tu caso.';
-    btn.textContent='Solicitar Asesoría Empresarial →';
-  } else {
-    note.style.display='none';
-    btn.textContent='Quiero que me Contacten →';
-  }
-}
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click',e=>{
-    const t=document.querySelector(a.getAttribute('href'));
-    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}
-  });
-});
-window.addEventListener('scroll',()=>{
-  document.getElementById('navbar').style.boxShadow=window.scrollY>20?'0 4px 40px rgba(0,0,0,0.6)':'none';
-});
-</script>
-</body>
-</html>
-
-
-                                                <!-- TESTIMONIALS --><section style="padding:80px 20px;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%)"><div style="max-width:1200px;margin:0 auto;text-align:center"><h2 style="font-size:2.5em;margin-bottom:20px;color:#f4c430">⭐ Lo Que Dicen Nuestros Clientes ⭐</h2>h2><p style="font-size:3em;font-weight:bold;color:white;margin:20px 0">5.0</p>p><p style="font-size:1.2em;color:#ccc;margin-bottom:40px">Basado en 29 reseñas de Google</p>p><a href="https://g.page/r/CfgoLGTznyLPEBM/review" target="_blank" style="display:inline-block;padding:15px 40px;background:#f4c430;color:#1a1a2e;text-decoration:none;border-radius:50px;font-weight:bold;font-size:1.1em">📝 Deja Tu Opinión en Google</a>a></div>div></section>section>
+          <textarea id="f-msg" placeholder="¿Cuántos miembros tiene tu familia? ¿Tienes alguna situación especial que quieras mencionar?">
