@@ -1,67 +1,62 @@
 # Great Insurance Team
 
-> Agencia de seguros en español. Seguro de salud ACA (Obamacare), Medicare Advantage, seguros suplementarios, vida y auto para familias hispanas. El seguro ACA y los seguros suplementarios están disponibles en español en 8 estados: Florida, Texas, Georgia, Tennessee, Arizona, Oklahoma, Carolina del Norte y Carolina del Sur.
+> Agencia de seguros con atención por teléfono en español. Liliana Vera y Delbert Useches orientan a familias y negocios. Para seguro de salud ACA, la agencia atiende en Florida, Texas, Georgia, Tennessee, Arizona, Oklahoma, Carolina del Norte y Carolina del Sur. Un agente confirma la disponibilidad de cada producto según el estado y el caso.
 
-## Servicios
+Este archivo resume información pública y enlaza al contenido del sitio. No es una inscripción en un buscador ni garantiza que un servicio de inteligencia artificial lo utilice.
 
-- Seguro de Salud ACA (Obamacare): Planes desde $0/mes con créditos tributarios según el ingreso. Disponible en español en Florida, Texas, Georgia, Tennessee, Arizona, Oklahoma, Carolina del Norte y Carolina del Sur. https://www.enrollsalud.com/q/liliana-vera
-- Seguros Suplementarios: Cáncer, accidentes, indemnización hospitalaria y enfermedades críticas. Disponibles en los 8 estados de ACA.
-- Medicare Advantage: Parte C con dental, visión, prima desde $0 (Florida).
-- Seguro de Vida: Término, vida entera e IUL.
-- Seguro de Auto: Liability, colisión y comprehensive (Florida).
-- Seguro Grupal Empresas: Planes para 2 a 50 empleados. https://www.enrollsalud.com/q/delbert
+## Contacto y atención
 
-## Páginas por estado (ACA + seguros suplementarios en español)
+- [Página principal](https://greatinsuranceteam.com/): servicios, equipo y reseñas.
+- [Solicitar contacto](https://greatinsuranceteam.com/#contacto): selección de cobertura y agente.
+- Liliana Vera: +1 954 394 7439; lvera@greatinsuranceteam.com.
+- Delbert Useches: +1 954 825 1214; delbert@greatinsuranceteam.com.
+- Carolina Vera: +1 954 210 2173; coordinación y atención al cliente.
+- Modalidad: atención por teléfono en español. Asesoría sin costo ni compromiso.
 
-- Florida: https://greatinsuranceteam.com
-- Texas: https://greatinsuranceteam.com/texas.html
-- Georgia: https://greatinsuranceteam.com/georgia.html
-- Tennessee: https://greatinsuranceteam.com/tennessee.html
-- Arizona: https://greatinsuranceteam.com/arizona.html
-- Oklahoma: https://greatinsuranceteam.com/oklahoma.html
-- Carolina del Norte: https://greatinsuranceteam.com/carolina-del-norte.html
-- Carolina del Sur: https://greatinsuranceteam.com/carolina-del-sur.html
+## Servicios y consentimiento
+
+- Seguro de salud ACA: orientación y comparación de opciones, sujetas a elegibilidad, período de inscripción y disponibilidad. Las cotizaciones comienzan con el consentimiento firmado en EnrollSalud.
+- [Consentimiento y cotización ACA con Liliana Vera](https://www.enrollsalud.com/q/liliana-vera).
+- [Consentimiento y cotización ACA con Delbert Useches](https://www.enrollsalud.com/q/delbert).
+- Medicare Advantage: orientación sobre opciones disponibles en Florida. Beneficios, primas y requisitos varían por plan y zona.
+- Seguros suplementarios: información sobre cáncer, accidentes, enfermedades críticas e indemnización hospitalaria. Complementan otras coberturas; no equivalen a un seguro médico integral.
+- Seguro de vida y seguro de auto: solicitar contacto para revisar opciones y disponibilidad.
+- [Seguro de salud grupal para empresas de 2 a 50 empleados](https://greatinsuranceteam.com/#empresas): consulta empresarial a través del formulario de contacto, con datos del negocio.
+- El permiso para recibir una llamada no sustituye el consentimiento ACA, la inscripción en un seguro ni otras autorizaciones necesarias.
+
+## Páginas por estado
+
+- [Florida](https://greatinsuranceteam.com/)
+- [Texas](https://greatinsuranceteam.com/texas.html)
+- [Georgia](https://greatinsuranceteam.com/georgia.html)
+- [Tennessee](https://greatinsuranceteam.com/tennessee.html)
+- [Arizona](https://greatinsuranceteam.com/arizona.html)
+- [Oklahoma](https://greatinsuranceteam.com/oklahoma.html)
+- [Carolina del Norte](https://greatinsuranceteam.com/carolina-del-norte.html)
+- [Carolina del Sur](https://greatinsuranceteam.com/carolina-del-sur.html)
 
 ## Guías en español
 
-- Guía del seguro ACA (Obamacare) en español: qué es, quién califica, cuánto cuesta, cuándo inscribirse y qué documentos se necesitan. https://greatinsuranceteam.com/guia-aca-espanol.html
-- Guía de Medicare en español: partes A, B, C y D, quién califica, cuándo inscribirse, costos 2026, Medicare Advantage vs. Original, Extra Help y doble elegibilidad (Medicare Advantage se ofrece en Florida). https://greatinsuranceteam.com/guia-medicare-espanol.html
-- Guía de seguros suplementarios en español: seguros de cáncer, enfermedades críticas (infarto y derrame cerebral), accidentes e indemnización hospitalaria — qué cubren, cómo pagan en efectivo directamente al asegurado y por qué complementan al plan ACA o Medicare. https://greatinsuranceteam.com/guia-seguros-suplementarios-espanol.html
-- Guía de cambios del ACA (Obamacare) para 2027 en español: qué cambió con los subsidios, quién puede recibir el crédito desde el 1 de enero de 2027, verificación de ingresos más estricta, fechas de inscripción (1 nov 2026 – 15 ene 2027) y alternativas si no calificas. https://greatinsuranceteam.com/guia-cambios-aca-2027-espanol.html
+- [Guía de seguro ACA](https://greatinsuranceteam.com/guia-aca-espanol.html): orientación sobre el Mercado de Seguros Médicos.
+- [Guía de Medicare](https://greatinsuranceteam.com/guia-medicare-espanol.html): partes de Medicare, costos y opciones de cobertura.
+- [Guía de seguros suplementarios](https://greatinsuranceteam.com/guia-seguros-suplementarios-espanol.html): tipos de cobertura y funcionamiento.
+- [Guía de cambios ACA 2027](https://greatinsuranceteam.com/guia-cambios-aca-2027-espanol.html): información del sitio sobre cambios para 2027; consultar las fuentes y fechas de la guía y confirmar la situación individual con un agente.
 
-## Guías ACA por estado (en español)
+## Guías ACA por estado
 
-- Texas: fechas 2026-2027, HealthCare.gov, Medicaid/CHIP y subsidios. https://greatinsuranceteam.com/guia-aca-texas.html
-- Georgia: Georgia Access (reemplazó a HealthCare.gov), Pathways y subsidios. https://greatinsuranceteam.com/guia-aca-georgia.html
-- Tennessee: fechas, TennCare/CoverKids y subsidios. https://greatinsuranceteam.com/guia-aca-tennessee.html
-- Arizona: AHCCCS (Medicaid expandido) y subsidios del Mercado. https://greatinsuranceteam.com/guia-aca-arizona.html
-- Oklahoma: SoonerCare (Medicaid expandido) y subsidios del Mercado. https://greatinsuranceteam.com/guia-aca-oklahoma.html
-- Carolina del Norte: Medicaid expandido desde dic-2023 y subsidios. https://greatinsuranceteam.com/guia-aca-carolina-del-norte.html
-- Carolina del Sur: fechas, Healthy Connections y subsidios. https://greatinsuranceteam.com/guia-aca-carolina-del-sur.html
+- [Texas](https://greatinsuranceteam.com/guia-aca-texas.html)
+- [Georgia](https://greatinsuranceteam.com/guia-aca-georgia.html)
+- [Tennessee](https://greatinsuranceteam.com/guia-aca-tennessee.html)
+- [Arizona](https://greatinsuranceteam.com/guia-aca-arizona.html)
+- [Oklahoma](https://greatinsuranceteam.com/guia-aca-oklahoma.html)
+- [Carolina del Norte](https://greatinsuranceteam.com/guia-aca-carolina-del-norte.html)
+- [Carolina del Sur](https://greatinsuranceteam.com/guia-aca-carolina-del-sur.html)
 
-## Agentes
+## Privacidad y avisos
 
-- Liliana Vera. Tel: (954) 394-7439. Email: lvera@greatinsuranceteam.com
-- Delbert Useches. Tel: (954) 825-1214. Email: delbert@greatinsuranceteam.com
-- Carolina Vera. Tel: (954) 210-2173.
+- [Política de privacidad](https://greatinsuranceteam.com/politica-de-privacidad.html)
+- [Aviso legal](https://greatinsuranceteam.com/aviso-legal.html)
+- [Términos de mensajes](https://greatinsuranceteam.com/terminos-de-mensajes.html)
+- [Mapa de páginas](https://greatinsuranceteam.com/sitemap.xml)
 
-## Datos clave
-
-- Más de 500 familias hispanas protegidas.
-- Servicio 100% en español. Asesoría completamente gratuita.
-- Calificación 5.0 en Google (44 reseñas).
-- Agentes licenciados (Florida: 2-15 Vida y Salud, 2-20 Líneas Generales) y autorizados para ACA en 8 estados.
-- Atención remota en español en todos los estados de servicio.
-- Sitio web: https://greatinsuranceteam.com
-
-## Preguntas frecuentes
-
-Seguro ACA (Obamacare) en español: planes del Marketplace con créditos tributarios, prima desde $0/mes para familias elegibles. Disponible en Florida, Texas, Georgia, Tennessee, Arizona, Oklahoma, Carolina del Norte y Carolina del Sur.
-Seguro médico sin ciudadanía: los planes del Mercado ACA requieren presencia legal (ciudadanos, residentes y otros estatus elegibles). Quienes no califican pueden acceder a seguros suplementarios.
-Seguros suplementarios: pagan dinero en efectivo directamente al asegurado ante un diagnóstico de cáncer, un accidente o una hospitalización, para cubrir lo que el plan médico no paga.
-Medicare Advantage Florida: combina Parte A, B y D, con dental, visión y prima frecuentemente $0/mes.
-Empresas pequeñas Florida: planes grupales para 2-50 empleados, con primas deducibles como gasto empresarial.
-
-## Área de servicio
-
-Seguro ACA (Obamacare) y seguros suplementarios en español en 8 estados: Florida, Texas, Georgia, Tennessee, Arizona, Oklahoma, Carolina del Norte y Carolina del Sur. Atención remota para familias hispanas de habla hispana. Base en Florida: Cape Coral, Fort Myers, Naples, Bonita Springs, Miami, Orlando y Tampa.
+La información publicada es orientativa. Las coberturas, primas, subsidios y elegibilidad dependen de las normas aplicables y del caso. Great Insurance Team no es HealthCare.gov ni una entidad gubernamental.

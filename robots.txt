@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+# Acceso explícito para las búsquedas de ChatGPT. El permiso general se conserva.
+User-agent: OAI-SearchBot
+Allow: /
+
 Sitemap: https://greatinsuranceteam.com/sitemap.xml
