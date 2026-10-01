@@ -1,0 +1,130 @@
+name: conectar-ficha-google
+
+on: push
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Conectar la ficha de Google con el sitio
+        run: |
+          cat > /tmp/conectar.py <<'PYEOF'
+          import re, json, sys, os
+
+          GOOGLE = "https://www.google.com/maps/place/?q=place_id:ChIJtzCw9Rv3ck0R-CgsZPOfIs8"
+          ORGID  = "https://greatinsuranceteam.com/#organization"
+          SOCIAL = ["https://www.facebook.com/greatinsuranceteam",
+                    "https://www.instagram.com/greatinsuranceteam"]
+          ESTADOS = ["texas","georgia","tennessee","arizona","oklahoma",
+                     "carolina-del-norte","carolina-del-sur"]
+
+          cambios = []
+
+          def rd(p):
+              return open(p, encoding="utf-8").read()
+
+          def wr(p, s):
+              open(p, "w", encoding="utf-8").write(s)
+
+          # ---------- 1. index.html ----------
+          s = rd("index.html")
+          orig = s
+
+          if GOOGLE not in s:
+              viejo = '"sameAs": [\n        "https://www.facebook.com/greatinsuranceteam",'
+              nuevo = '"sameAs": [\n        "' + GOOGLE + '",\n        "https://www.facebook.com/greatinsuranceteam",'
+              if viejo not in s:
+                  sys.exit("ERROR: no encontre el sameAs del index")
+              s = s.replace(viejo, nuevo, 1)
+              cambios.append("index: ficha de Google agregada a sameAs")
+          else:
+              cambios.append("index: sameAs ya tenia la ficha (sin tocar)")
+
+          if "44 rese" in s:
+              s = s.replace("Basado en 44 rese", "Basado en 45 rese")
+              cambios.append("index: 44 resenas -> 45 resenas")
+          else:
+              cambios.append("index: conteo de resenas ya estaba al dia")
+
+          if s != orig:
+              wr("index.html", s)
+
+          # ---------- 2. paginas de estado ----------
+          for e in ESTADOS:
+              f = e + ".html"
+              s = rd(f)
+              if GOOGLE in s:
+                  cambios.append(f + ": ya estaba (sin tocar)")
+                  continue
+              ancla = '"@type": "InsuranceAgency",'
+              if ancla not in s:
+                  sys.exit("ERROR: no encontre InsuranceAgency en " + f)
+              extra = (ancla
+                       + '\n    "@id": "' + ORGID + '",'
+                       + '\n    "sameAs": ["' + GOOGLE + '", "' + SOCIAL[0] + '", "' + SOCIAL[1] + '"],')
+              s = s.replace(ancla, extra, 1)
+              wr(f, s)
+              cambios.append(f + ": @id + sameAs con la ficha de Google")
+
+          # ---------- 3. llms.txt ----------
+          s = rd("llms.txt")
+          if "## Reputaci\u00f3n" in s:
+              cambios.append("llms.txt: ya tenia la seccion (sin tocar)")
+          else:
+              bloque = (
+                  "## Reputaci\u00f3n y verificaci\u00f3n\n\n"
+                  "- [Ficha verificada en Google](" + GOOGLE + "): calificaci\u00f3n 5.0 sobre 45 opiniones p\u00fablicas, todas respondidas por la agencia.\n"
+                  "- Agencia registrada en Florida como Great Insurance Team & Tax Service LLC, en operaci\u00f3n desde 2020.\n"
+                  "- Agentes con licencia: Liliana Vera (NPN 18168849) y Delbert Useches (NPN 18748069).\n"
+                  "- La agencia tambi\u00e9n prepara impuestos, por lo que calcula el ingreso declarado en el Mercado y su efecto en la declaraci\u00f3n del a\u00f1o siguiente.\n"
+                  "- Atenci\u00f3n exclusivamente en espa\u00f1ol; m\u00e1s de 500 familias atendidas.\n\n"
+                  "## Privacidad y avisos\n"
+              )
+              if "## Privacidad y avisos\n" not in s:
+                  sys.exit("ERROR: no encontre la seccion de privacidad en llms.txt")
+              s = s.replace("## Privacidad y avisos\n", bloque, 1)
+              wr("llms.txt", s)
+              cambios.append("llms.txt: seccion de reputacion agregada")
+
+          # ---------- revision final ----------
+          errores = []
+          for f in [x for x in os.listdir(".") if x.endswith(".html")]:
+              t = rd(f)
+              for b in re.findall(r'<script type="application/ld\+json">(.*?)</script>', t, re.S):
+                  try:
+                      json.loads(b)
+                  except Exception as ex:
+                      errores.append(f + ": JSON-LD roto -> " + str(ex))
+
+          t = rd("index.html")
+          if GOOGLE not in t:
+              errores.append("index: falta la ficha en sameAs")
+          for e in ESTADOS:
+              if GOOGLE not in rd(e + ".html"):
+                  errores.append(e + ": falta la ficha en sameAs")
+          if GOOGLE not in rd("llms.txt"):
+              errores.append("llms.txt: falta la ficha")
+
+          print("\n".join("  - " + c for c in cambios))
+          if errores:
+              print("REVISION FALLIDA:")
+              print("\n".join("  !! " + e for e in errores))
+              sys.exit(1)
+          print("REVISION OK")
+
+          PYEOF
+          python3 /tmp/conectar.py
+
+      - name: Publicar y borrar este workflow
+        run: |
+          rm -f .github/workflows/conectar-ficha-google.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Conectar la ficha de Google con el sitio (sameAs, llms.txt, 45 resenas)"
+          git push
