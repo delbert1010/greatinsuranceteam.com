@@ -1700,6 +1700,11 @@ if(barx)barx.addEventListener('click',function(){closed=true;bar.classList.remov
 .gm-rc p{margin:6px 0 0;font-size:15px;line-height:1.5;color:#1a2540}
 .gm-rv{opacity:.35;transform:translateY(24px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
 .gm-rv.gm-in{opacity:1;transform:none}
+/* DISENO-MODERNO-v2 numeros */
+.wi-num{transition:color .35s,text-shadow .35s,transform .35s}
+.wi h4{transition:color .35s}
+.wi:hover .wi-num,.wi.gm-lit .wi-num{color:#f7c858;text-shadow:0 0 18px rgba(247,200,88,.65),0 0 3px #fff3cf;transform:scale(1.12)}
+.wi:hover h4,.wi.gm-lit h4{color:#fff}
 @media (prefers-reduced-motion:reduce){.gm-ring,.gm-halo,.gm-orb,.gm-sheen,.gm-shadow,.gm-floaty,.hero-title .accent,.btn-hero::after,.vidb-card::after,.va-card::after,.gm-track{animation:none!important}.gm-rv{opacity:1;transform:none}.gm-marquee{overflow-x:auto}}
 </style>
 <script>
@@ -1728,6 +1733,7 @@ if(fine)addEventListener('pointermove',function(e){mx=e.clientX/innerWidth-.5;my
 function draw(ts){cx.clearRect(0,0,W,H);var sy=scrollY*dpr;for(var i=0;i<S.length;i++){var s=S[i],x=((s.x+mx*40*s.z*dpr)%W+W)%W,y=((s.y-sy*.15*s.z+my*30*s.z*dpr)%H+H)%H,a=reduce?.6:(.35+.45*Math.sin(ts/900*s.z+s.p));cx.beginPath();cx.arc(x,y,s.r*s.z+.2,0,6.283);cx.fillStyle='rgba('+s.c+','+a.toFixed(2)+')';cx.fill();if(!reduce){s.x+=.05*s.z*dpr;if(s.x>W)s.x=0;}}if(!reduce)raf=requestAnimationFrame(draw);}
 raf=requestAnimationFrame(draw);
 document.addEventListener('visibilitychange',function(){cancelAnimationFrame(raf);if(!document.hidden&&!reduce)raf=requestAnimationFrame(draw);});
+if(!fine&&'IntersectionObserver' in window){var wo=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('gm-lit',e.isIntersecting);});},{rootMargin:'-45% 0px -45% 0px'});document.querySelectorAll('.wi').forEach(function(el){wo.observe(el);});}
 }catch(e){}})();
 </script>
 <!-- DISENO-MODERNO-v1 fin -->
