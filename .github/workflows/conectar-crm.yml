@@ -1,0 +1,104 @@
+name: conectar-crm
+on:
+  push:
+    paths:
+      - ".github/workflows/conectar-crm.yml"
+permissions:
+  contents: write
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Poner la precarta del CRM en los botones de cotizar
+        run: |
+          cat > /tmp/conectar.py <<'PYEOF'
+          import re, json, sys, glob
+
+          MARK = "CRM-INSCRIPCION-v1"
+          CRM = "https://crm.greatinsuranceteam.com/inscripcion?de=web"
+          idx = open("index.html", encoding="utf-8").read()
+          if MARK in idx:
+              print("ya estaba aplicado, no se toca nada"); sys.exit(0)
+
+          def rd(p): return open(p, encoding="utf-8").read()
+          def wr(p, s): open(p, "w", encoding="utf-8").write(s)
+          def rep(s, a, b, n, where):
+              c = s.count(a)
+              assert c == n, "%s: esperaba %d de [%s] y hay %d" % (where, n, a[:70], c)
+              return s.replace(a, b)
+
+          LEGALES = ["aviso-legal.html", "politica-de-privacidad.html", "terminos-de-mensajes.html"]
+          ACA = ["arizona.html", "carolina-del-norte.html", "carolina-del-sur.html", "georgia.html",
+                 "oklahoma.html", "tennessee.html", "texas.html", "guia-aca-espanol.html",
+                 "guia-cambios-aca-2027-espanol.html"] + ["guia-aca-%s.html" % e for e in
+                 ["arizona", "carolina-del-norte", "carolina-del-sur", "georgia", "oklahoma", "tennessee", "texas"]]
+
+          # 1) Botones "Cotizacion Gratis" de las paginas ACA: van a la precarta del CRM
+          boton = re.compile(r'<a href="#te-llamamos"( class="btn btn-(?:gold|dark)">Cotizaci(?:ó|&oacute;)n Gratis</a>)')
+          for p in ACA:
+              s = rd(p)
+              n = len(boton.findall(s))
+              assert n == 4, "%s: esperaba 4 botones y hay %d" % (p, n)
+              wr(p, boton.sub('<a href="' + CRM + r'"\1', s))
+          for p in LEGALES:
+              wr(p, rep(rd(p), '<a href="https://greatinsuranceteam.com/#te-llamamos" class="btn">Cotización Gratis</a>',
+                        '<a href="' + CRM + '" class="btn">Cotización Gratis</a>', 1, p))
+
+          # 2) Portada
+          s = idx
+          s = rep(s, '"url": "https://greatinsuranceteam.com/#te-llamamos"', '"url": "' + CRM + '"', 1, "index schema")
+          s = rep(s, '<a class="svc-cta" href="#contacto" data-coverage="aca" data-source="cobertura-aca">Iniciar cotización ACA →</a>',
+                  '<a class="svc-cta" href="' + CRM + '">Iniciar cotización ACA →</a>', 1, "index tarjeta ACA")
+          PANEL = ('        <div id="aca-panel" class="aca-panel" hidden>\n'
+                   '          <h4>Tu cotización ACA en 3 pasos</h4>\n'
+                   '          <p>1. Presiona el botón dorado.<br>2. Escribe tu nombre y tu fecha de nacimiento, y firma la carta que pide el Mercado.<br>3. Llena tus datos y los de tu familia. Te llamamos con tu cotización.</p>\n'
+                   '          <a class="btn-hero" href="' + CRM + '">Llenar mi planilla y firmar →</a>\n'
+                   '          <p class="form-help">¿Prefieres que te llamemos primero? Escribe tu nombre y tu teléfono aquí abajo.</p>\n'
+                   '        </div>\n')
+          s = rep(s, '        <fieldset id="lead-fields" hidden disabled>', PANEL + '        <fieldset id="lead-fields" hidden disabled>', 1, "index panel")
+          s = rep(s, '<script src="/lead-form.js?v=2" defer></script>', '<script src="/lead-form.js?v=3" defer></script>', 1, "index script")
+          s = rep(s, "</body>", "<!-- %s -->\n</body>" % MARK, 1, "index marca")
+          wr("index.html", s)
+
+          # 3) Formulario de la portada: al escoger ACA aparece el boton a la precarta (y sigue la opcion de que lo llamen)
+          j = rd("lead-form.js")
+          j = rep(j, "  const success = document.getElementById('form-ok');\n",
+                  "  const success = document.getElementById('form-ok');\n  const acaPanel = document.getElementById('aca-panel');\n", 1, "js var")
+          j = rep(j, "    businessFields.disabled = !isBusiness;\n",
+                  "    businessFields.disabled = !isBusiness;\n    if (acaPanel) acaPanel.hidden = service.value !== ACA;\n", 1, "js panel")
+          wr("lead-form.js", j)
+
+          # 4) Archivo que leen las IA
+          t = rd("llms.txt")
+          t = rep(t, "Para cotizar, la persona deja su nombre y teléfono en https://greatinsuranceteam.com/#te-llamamos o llama al +1 954 394 7439.",
+                  "Para cotizar, la persona llena su planilla y firma la carta de consentimiento en " + CRM + ", o llama al +1 954 394 7439.", 1, "llms")
+          wr("llms.txt", t)
+
+          # 5) Revision final
+          total = 0
+          for p in glob.glob("*.html"):
+              c = rd(p)
+              total += c.count(CRM)
+              for blk in re.findall(r'<script type="application/ld\+json">([\s\S]*?)</script>', c):
+                  json.loads(blk)
+              assert "enrollsalud" not in c.lower()
+          assert total == 16 * 4 + 3 + 3, "enlaces al CRM: %d" % total
+          s = rd("index.html")
+          for key in ['id="lead-form"', 'id="lead-fields"', 'id="te-llamamos"', "service_jjg4int", "DISENO-MODERNO-v2", "COTIZADOR-EXTERNO-QUITADO-v1"]:
+              assert key in s, "falta " + key
+          print("OK: precarta del CRM en", total, "botones")
+
+          PYEOF
+          echo "57114a23c8e865cf577514362a7b5b4b3ada2df05e87e0e5b9c97d7767b6519f  /tmp/conectar.py" | sha256sum -c -
+          python3 /tmp/conectar.py
+          node --check lead-form.js
+      - name: Guardar y publicar
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm -q --cached .github/workflows/conectar-crm.yml
+          rm -f .github/workflows/conectar-crm.yml
+          git add -A
+          git commit -m "Botones de cotizar: van a la precarta del CRM (inscripcion?de=web)"
+          git push
