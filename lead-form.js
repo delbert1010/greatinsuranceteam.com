@@ -12,6 +12,7 @@
   const submit = document.getElementById('lead-submit');
   const error = document.getElementById('f-error');
   const success = document.getElementById('form-ok');
+  const acaPanel = document.getElementById('aca-panel');
   const consentVersion = 'contacto-manual-2026-09-09-v1';
   let sending = false;
   let submitted = false;
@@ -35,6 +36,7 @@
     fields.disabled = !showContact;
     businessFields.hidden = !isBusiness;
     businessFields.disabled = !isBusiness;
+    if (acaPanel) acaPanel.hidden = service.value !== ACA;
     document.getElementById('agent-wrap').hidden = !service.value;
     document.getElementById('selection-help').hidden = Boolean(service.value);
     document.getElementById('f-consent-topic').textContent = service.value || 'la cobertura que seleccione';
