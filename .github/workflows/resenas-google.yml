@@ -1,0 +1,97 @@
+name: resenas-google
+on:
+  push:
+    paths:
+      - ".github/workflows/resenas-google.yml"
+  schedule:
+    - cron: "17 */3 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: resenas-google
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Poner el numero exacto de resenas de Google
+        env:
+          GOOGLE_PLACES_KEY: ${{ secrets.GOOGLE_PLACES_KEY }}
+        run: |
+          cat > /tmp/resenas.py <<'PYEOF'
+          import os, re, sys, json, datetime, urllib.request
+
+          # Perfil de Google de Great Insurance Team & Tax Services
+          PLACE = "ChIJtzCw9Rv3ck0R-CgsZPOfIs8"
+          # Contadas a mano en el Perfil de Negocio el 19 de octubre de 2026
+          MANUAL_TOTAL, MANUAL_NOTA = 78, "5.0"
+          MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto",
+                   "septiembre", "octubre", "noviembre", "diciembre"]
+
+          def rd(p): return open(p, encoding="utf-8").read()
+          def wr(p, s): open(p, "w", encoding="utf-8").write(s)
+
+          idx = rd("index.html")
+          llms = rd("llms.txt")
+
+          # 1) Primera vez: el numero aproximado pasa a ser exacto y queda marcado
+          VIEJO = ('<p style="font-size:3em;font-weight:bold;color:white;margin:20px 0">5.0</p>'
+                   '<p style="font-size:1.2em;color:#ccc;margin-bottom:40px">Más de 75 reseñas en Google</p>')
+          NUEVO = ('<p style="font-size:3em;font-weight:bold;color:white;margin:20px 0"><span id="gm-resenas-nota">%s</span></p>'
+                   '<p style="font-size:1.2em;color:#ccc;margin-bottom:40px"><span id="gm-resenas-total">%d</span> reseñas en Google</p>')
+          if 'id="gm-resenas-total"' not in idx:
+              assert idx.count(VIEJO) == 1, "no encontre el texto 'Más de 75 reseñas' en la portada"
+              idx = idx.replace(VIEJO, NUEVO % (MANUAL_NOTA, MANUAL_TOTAL))
+
+          re_total = re.compile(r'(<span id="gm-resenas-total">)(\d+)(</span>)')
+          re_nota = re.compile(r'(<span id="gm-resenas-nota">)([0-9.]+)(</span>)')
+          re_llms = re.compile(r'el \d{1,2} de [a-z]+ de \d{4} mostraba una calificación de [0-9.]+ sobre \d+ opiniones públicas')
+          assert len(re_total.findall(idx)) == 1 and len(re_nota.findall(idx)) == 1
+          assert len(re_llms.findall(llms)) == 1, "no encontre la frase de opiniones en llms.txt"
+          total = int(re_total.search(idx).group(2))
+          nota = re_nota.search(idx).group(2)
+          if "sobre 56 opiniones" in llms:          # primera vez
+              total, nota = MANUAL_TOTAL, MANUAL_NOTA
+
+          # 2) Si ya existe la llave de Google, se pregunta el numero de hoy
+          key = os.environ.get("GOOGLE_PLACES_KEY", "").strip()
+          if key:
+              req = urllib.request.Request("https://places.googleapis.com/v1/places/" + PLACE,
+                                           headers={"X-Goog-Api-Key": key, "X-Goog-FieldMask": "rating,userRatingCount"})
+              try:
+                  d = json.load(urllib.request.urlopen(req, timeout=30))
+                  n, r = int(d["userRatingCount"]), float(d["rating"])
+                  assert n >= 1 and 1 <= r <= 5
+                  total, nota = n, "%.1f" % r
+                  print("Google dice:", total, "reseñas, nota", nota)
+              except Exception as e:
+                  print("Google no respondio bien, se deja el numero que estaba:", type(e).__name__)
+          else:
+              print("Todavia no hay llave de Google: queda el numero contado a mano")
+
+          # 3) Escribir solo si cambio algo
+          idx2 = re_total.sub(r"\g<1>%d\g<3>" % total, idx)
+          idx2 = re_nota.sub(r"\g<1>%s\g<3>" % nota, idx2)
+          viejo_llms = re_llms.search(llms).group(0)
+          if not viejo_llms.endswith("de %s sobre %d opiniones públicas" % (nota, total)):
+              hoy = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(hours=4)
+              llms = llms.replace(viejo_llms, "el %d de %s de %d mostraba una calificación de %s sobre %d opiniones públicas"
+                                  % (hoy.day, MESES[hoy.month - 1], hoy.year, nota, total))
+          wr("index.html", idx2)
+          wr("llms.txt", llms)
+          for blk in re.findall(r'<script type="application/ld\+json">([\s\S]*?)</script>', idx2):
+              json.loads(blk)
+          assert "Más de 75 reseñas" not in idx2
+          open("/tmp/resenas.txt", "w").write("%d reseñas, nota %s" % (total, nota))
+          print("OK:", total, "reseñas, nota", nota)
+          PYEOF
+          echo "718829d4822b5dcbc032002c646e8d7c0c8e42dad7aa9fc5a2b747e172f69760  /tmp/resenas.py" | sha256sum -c -
+          python3 /tmp/resenas.py
+      - name: Publicar solo si cambio
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html llms.txt
+          if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
+          git commit -m "Reseñas de Google: $(cat /tmp/resenas.txt)"
+          git push
