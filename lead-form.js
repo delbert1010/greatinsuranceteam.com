@@ -12,8 +12,6 @@
   const submit = document.getElementById('lead-submit');
   const error = document.getElementById('f-error');
   const success = document.getElementById('form-ok');
-  const acaPanel = document.getElementById('aca-panel');
-  const acaLink = document.getElementById('aca-continue');
   const consentVersion = 'contacto-manual-2026-09-09-v1';
   let sending = false;
   let submitted = false;
@@ -28,23 +26,15 @@
     empresas: BUSINESS
   };
 
-  function updateAgentLink() {
-    // Use the established consent-first entrypoints; never attach personal data.
-    acaLink.href = agent.value === 'Delbert Useches'
-      ? 'https://www.enrollsalud.com/q/delbert'
-      : 'https://www.enrollsalud.com/q/liliana-vera';
-    document.getElementById('aca-agent-name').textContent = agent.value || 'Liliana Vera';
-  }
+  function updateAgentLink() {}
 
   function updateService() {
-    const isACA = service.value === ACA;
     const isBusiness = service.value === BUSINESS;
-    const showContact = Boolean(service.value) && !isACA;
+    const showContact = Boolean(service.value);
     fields.hidden = !showContact;
     fields.disabled = !showContact;
     businessFields.hidden = !isBusiness;
     businessFields.disabled = !isBusiness;
-    acaPanel.hidden = !isACA;
     document.getElementById('agent-wrap').hidden = !service.value;
     document.getElementById('selection-help').hidden = Boolean(service.value);
     document.getElementById('f-consent-topic').textContent = service.value || 'la cobertura que seleccione';
@@ -85,9 +75,8 @@
   async function sendRequest(event) {
     event.preventDefault();
     if (sending || submitted) return;
-    // ACA is handled only by its explicit link to the signed-consent flow.
-    if (!service.value || service.value === ACA) {
-      (service.value === ACA ? acaLink : service).focus();
+    if (!service.value) {
+      service.focus();
       return;
     }
     if (!validate() || !consent.checked) return;

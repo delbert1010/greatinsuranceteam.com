@@ -15,9 +15,7 @@ Este archivo resume información pública y enlaza al contenido del sitio. No es
 
 ## Servicios y consentimiento
 
-- Seguro de salud ACA: orientación y comparación de opciones, sujetas a elegibilidad, período de inscripción y disponibilidad. Las cotizaciones comienzan con el consentimiento firmado en EnrollSalud.
-- [Consentimiento y cotización ACA con Liliana Vera](https://www.enrollsalud.com/q/liliana-vera).
-- [Consentimiento y cotización ACA con Delbert Useches](https://www.enrollsalud.com/q/delbert).
+- Seguro de salud ACA: orientación y comparación de opciones, sujetas a elegibilidad, período de inscripción y disponibilidad. Para cotizar, la persona deja su nombre y teléfono en https://greatinsuranceteam.com/#te-llamamos o llama al +1 954 394 7439.
 - Medicare Advantage: orientación sobre opciones disponibles en Florida. Beneficios, primas y requisitos varían por plan y zona.
 - Seguros suplementarios: información sobre cáncer, accidentes, enfermedades críticas e indemnización hospitalaria. Complementan otras coberturas; no equivalen a un seguro médico integral.
 - Seguro de vida y seguro de auto: solicitar contacto para revisar opciones y disponibilidad.
