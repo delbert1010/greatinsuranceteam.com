@@ -24,8 +24,9 @@ Este archivo resume información pública y enlaza al contenido del sitio. No es
 
 ## Fechas clave de inscripción (2026–2027)
 
-- Medicare, Inscripción Abierta (AEP): 15 de octubre al 7 de diciembre de 2026.
-- ACA / Mercado de Seguros Médicos, Open Enrollment: 1 de noviembre de 2026 al 15 de enero de 2027 (inscribirse antes del 15 de diciembre para cobertura desde el 1 de enero).
+- Medicare, Inscripción Abierta (AEP): 15 de octubre al 7 de diciembre de 2026. También existen otros períodos: quienes ya tienen Medicare Advantage pueden hacer un cambio permitido del 1 de enero al 31 de marzo; los períodos especiales dependen de sus requisitos.
+- ACA / Mercado de Seguros Médicos, Open Enrollment: 1 de noviembre de 2026 al 15 de enero de 2027. Para cobertura desde el 1 de enero de 2027, elegir el plan a más tardar el 15 de diciembre de 2026 y pagar la primera prima, si corresponde. Fuera del período general, se requiere un período especial de inscripción.
+- Fuentes oficiales consultadas el 29 de octubre de 2026: [períodos de Medicare (PDF)](https://www.medicare.gov/publications/11219-Understanding-Medicare-Advantage-Medicare-Drug-Plan-Enrollment-Periods.pdf), [fechas de HealthCare.gov](https://www.healthcare.gov/quick-guide/dates-and-deadlines/) y [fechas de Georgia Access](https://georgiaaccess.gov/renew-or-update-coverage/).
 
 ## Páginas por estado
 
